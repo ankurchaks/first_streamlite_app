@@ -71,7 +71,7 @@ try:
 # fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 
 # Display the result on the screen as a table
-streamlit.dataframe(fruityvice_normalized)
+#streamlit.dataframe(fruityvice_normalized)
 
 streamlit.stop()
 # Let's Query Our Trial Account Metadata 
