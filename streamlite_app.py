@@ -57,6 +57,8 @@ try:
     back_from_function=get_fruityvice_data(fruit_choice)
     streamlit.dataframe(back_from_function)
 
+    
+    streamlit.stop()
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 # streamlit.text(fruityvice_response.json()) # Just write the data on the screen
 
