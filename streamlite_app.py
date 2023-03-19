@@ -23,6 +23,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 streamlit.dataframe(my_fruit_list)
 
 # Let's put a pick list here so they can pick the fruit they want to include
+streamlit.title("Build Your Own Fruit Smoothie")
 # streamlit.multiselect("Pick Some Fruits:", list(my_fruit_list.index))
 # streamlit.multiselect("Pick Some Fruits:", list(my_fruit_list.index),["Avocado","Strawberries"])
 fruits_selected=streamlit.multiselect("Pick Some Fruits:", list(my_fruit_list.index),["Avocado","Strawberries"])
@@ -73,3 +74,6 @@ streamlit.dataframe(my_data_row)
 # Add Text Entry Box
 add_my_fruit=streamlit.text_input('What fruit would you like information about?')
 streamlit.write('Thanks for adding', add_my_fruit)
+
+# Add data to snowSQL Table 
+my_cur.execute("insert into fruit_load_list Values ('from steamlit')")
