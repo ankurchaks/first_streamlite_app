@@ -1,6 +1,8 @@
 import streamlit
 import pandas
 import requests
+import snowflake.connector
+from urllib.error import URLerror
 
 
 streamlit.title("My Mom's New Healthy Diner")
@@ -52,9 +54,11 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # Display the result on the screen as a table
 streamlit.dataframe(fruityvice_normalized)
 
+streamlit.text("Data from snowSQL starts after this point")
 streamlit.stop()
+streamlit.text("Data from snowSQL starts")
 
-import snowflake.connector
+
 # Query Our Trial Account Metadata 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
